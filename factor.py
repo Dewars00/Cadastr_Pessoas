@@ -1,4 +1,4 @@
-def SexoVerificacao(x):
+def SexoVerificacao(x):    #! Função que verifica se o valor inserido para sexo é válido
     from time import sleep
     while True:
         if x in 'MF':
@@ -9,7 +9,7 @@ def SexoVerificacao(x):
             x = str(input('Sexo[M/F]: ')).upper()
 
     
-def DesejaContinuar(v):
+def DesejaContinuar(v):    #! Função que verifica se o valor de v é válido
     from time import sleep
     while True:
         if v in 'SN':
