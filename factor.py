@@ -38,8 +38,8 @@ def notint(num):
         sleep(1)
         menu()
     if num.isnumeric():
-        num = int(num)
-    return num
+        x = int(num)
+    return x
 
 
 def menu():
