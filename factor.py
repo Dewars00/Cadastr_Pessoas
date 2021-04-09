@@ -3,13 +3,14 @@ from os import system
 
 
 def SexoVerificacao(x):    #! Função que verifica se o valor inserido para sexo é válido
-    while True:
-        if x in 'MF':
-            break
-        else:
+    if x not in 'MF':
+        while True:
+            if x in 'MF':
+                break
             print('===Entre com um valor válido!===')
             sleep(1)
             x = str(input('Sexo[M/F]: ')).upper()
+    return x
 
     
 def DesejaContinuar(v):    #! Função que verifica se o valor de v é válido
@@ -30,7 +31,7 @@ def topo(msg):      #! Mensagem do topo da tela
 
 def notint(num):
     while True:
-        if num in '123':
+        if num in '1234':
                 break
         sleep(1)
         print()
@@ -46,7 +47,7 @@ def menu():
     sleep(1)
     system('cls')
     topo('MENU PRINCIPAL')
-    print('[1] TELA DE CADASTROS\n[2] EXIBIR TODOS OS CADASTROS\n[3]EXCLUIR UM CADASTRO')
+    print('[1] NOVO CADASTRO\n[2] EXIBIR TODOS OS CADASTROS\n[3] EXCLUIR UM CADASTRO\n[4] SAIR')
     print()
     opt = str(input('ESCOLHA UMA DAS OPÇÕES ACIMA... '))
     opt = notint(opt)
