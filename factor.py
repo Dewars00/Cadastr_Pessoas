@@ -14,12 +14,14 @@ def SexoVerificacao(x):    #! Função que verifica se o valor inserido para sex
 
     
 def DesejaContinuar(v):    #! Função que verifica se o valor de v é válido
+    v = str(input('Deseja continuar[S/N]? ')).upper()
     while True:
         if v in 'SN':
             break
         print(f'ERRO! ENTRE COM UM VALOR VÁLIDO')
         sleep(1)
         v = str(input('Deseja continuar[S/N]? ')).upper()
+    return v
 
         
 def topo(msg):      #! Mensagem do topo da tela
@@ -28,28 +30,23 @@ def topo(msg):      #! Mensagem do topo da tela
     print('='*60)
     print()
 
+    
 
-def notint(num):
-    while True:
-        if num in '1234':
-                break
-        sleep(1)
-        print()
-        print('ERRO! ENTRE COM UM VALOR VÁLIDO')
-        sleep(1)
-        menu()
-    if num.isnumeric():
-        x = int(num)
-    return x
-
-
-def menu():
+def menu(num):     #!Função para a tela de menu
     sleep(1)
     system('cls')
     topo('MENU PRINCIPAL')
     print('[1] NOVO CADASTRO\n[2] EXIBIR TODOS OS CADASTROS\n[3] EXCLUIR UM CADASTRO\n[4] SAIR')
-    print()
-    opt = str(input('ESCOLHA UMA DAS OPÇÕES ACIMA... '))
-    opt = notint(opt)
-    return opt
-    sleep(1)
+    opt = str(input('\nESCOLHA UMA DAS OPÇÕES DO MENU... '))
+    while True:
+        if opt in '1234':
+            break
+        print('ERRO!!! Entre com um valor válido!')
+        sleep(1.5)
+        opt = str(input('\nESCOLHA UMA DAS OPÇÕES DO MENU... '))
+    ret = int(opt)
+    return ret
+    
+    
+
+    

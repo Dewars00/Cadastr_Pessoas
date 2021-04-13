@@ -4,17 +4,18 @@ import factor
 
 pessoas = []
 dados = {}
-v = 's'
 index = 0
 vf = False
 delete = 0
+opt = ''
+v = ''
 
 system('cls')
 factor.topo('SISTEMA DE CADASTRO DE PESSOAS')
 input('Aperte ENTER para iniciar...')
 
 while True:
-    opt = factor.menu()
+    opt = factor.menu(opt)
     system('cls')
     sleep(1)
     if opt == 1:
@@ -29,8 +30,7 @@ while True:
             dados['Sexo'] = factor.SexoVerificacao(x)
             pessoas.append(dados.copy())
             dados.clear()
-            v = str(input('Deseja continuar[S/N]? ')).upper()
-            factor.DesejaContinuar(v)      
+            v = factor.DesejaContinuar(v)      
             sleep(1)
             system('cls')
             if v == 'N':
@@ -42,6 +42,7 @@ while True:
             for k,v in pessoas[i].items():
                 print(f'{k} \t====== \t{v}')
             print('=' * 60)
+            sleep(0.001)
         input('\nAperte ENTER para continuar...')
     elif opt == 3:
         while True:
@@ -57,13 +58,13 @@ while True:
             else:
                 print('ID não encontrado, tente novamente!')
                 sleep(1)
-                v = str=(input('Deseja continuar? [S/N]'))
-                factor.DesejaContinuar(v)
-            if vf == True or v == 'S':
+                v = factor.DesejaContinuar(v)
+            sleep(1)
+            system('cls')
+            if v == 'N':
                 break
-
-
-
-
-
-
+    elif opt == 4:
+        break
+factor.topo('FINALIZANDO')
+print('ATÉ MAIS!!!')
+input()
