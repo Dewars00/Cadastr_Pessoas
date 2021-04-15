@@ -22,8 +22,8 @@ while True:
         while True:
             factor.topo('CADASTRO')
             if len(pessoas) > 0:
-                index = pessoas[-1]['ID'] +1
-            dados['ID'] = index
+                index = pessoas[-1]['ID '] +1
+            dados['ID '] = index
             dados['Nome'] = str(input('Nome: ')).upper()
             dados['Idade'] = int(input('Idade: '))
             x = str(input('Sexo[M/F]: ')).upper()       
@@ -64,6 +64,30 @@ while True:
             if v == 'N':
                 break
     elif opt == 4:
+            factor.topo('GERAR ARQUIVO')
+            print('Essa opção irá criar um arquivo com todos os cadastros\ne em seguida encerrará o programa!!\n')
+            v = factor.DesejaContinuar(v)
+            if v == 'S':
+                arq = open("Cadastros.txt", "w")
+                arq.write('='*60)
+                arq.write('\n')
+                arq.write(f'{"PESSOAS CADASTRADAS"}'.center(60))
+                arq.write('\n')
+                arq.write('='*60)
+                for i in range (0,len(pessoas)):
+                    arq.write('\n\n')
+                    arq.write('='*60)
+                    for k,v in pessoas[i].items():
+                        arq.write(f'\n{k} \t ====== \t{v}')
+                    arq.write('\n')
+                    arq.write('='*60)
+                arq.write('\n')
+                arq.close()
+                opt = 5
+                sleep(1)
+                system('cls')
+                break
+    if opt == 5:
         break
 factor.topo('FINALIZANDO')
 print('ATÉ MAIS!!!')

@@ -36,10 +36,10 @@ def menu(num):     #!Função para a tela de menu
     sleep(1)
     system('cls')
     topo('MENU PRINCIPAL')
-    print('[1] NOVO CADASTRO\n[2] EXIBIR TODOS OS CADASTROS\n[3] EXCLUIR UM CADASTRO\n[4] SAIR')
+    print('[1] NOVO CADASTRO\n[2] EXIBIR TODOS OS CADASTROS\n[3] EXCLUIR UM CADASTRO\n[4] GERAR ARQUIVO COM TODOS OS CADASTROS\n[5] SAIR')
     opt = str(input('\nESCOLHA UMA DAS OPÇÕES DO MENU... '))
     while True:
-        if opt in '1234':
+        if opt in '12345':
             break
         print('ERRO!!! Entre com um valor válido!')
         sleep(1.5)
